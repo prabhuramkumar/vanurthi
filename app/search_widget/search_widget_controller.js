@@ -1,7 +1,7 @@
 'use strict';
 
-var searchWidgetControllers = angular.module('searchWidget', []);
-searchWidgetControllers.controller('SearchWidgetCtrl', ['$scope', '$http',
+angular.module('searchWidget', [])
+.controller('SearchWidgetCtrl', ['$scope', '$http',
 	function ($scope, $http) {
 		$scope.searchQuery = {};
 		
