@@ -1,0 +1,48 @@
+<form>
+	<h3>Serach Widget</h3>
+
+	<div class="form-group">
+		<label for="from">From</label>
+		<input type="text" name="from" ng-model="searchQuery.from" class="form-control" ng-required="true"/>
+	</div>
+
+	<div class="form-group">
+		<label for="to">To</label>
+		<input type="text" name="to" ng-model="searchQuery.to" class="form-control" ng-required="true"/>
+	</div>
+
+	<div class="form-group">
+	<label for="departDate">Departure</label>
+		<p class="input-group">
+              <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="searchQuery.departDate" is-open="openedDepart" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open($event, 'depart')"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+        </p>
+	</div>
+
+	<div class="form-group">
+	<label><input type="checkbox" ng-model="searchQuery.returnActive" />Return</label>
+	<p class="input-group" ng-hide="!searchQuery.returnActive">
+          <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="searchQuery.returnDate" is-open="openedReturn" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="open($event, 'return')"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+    </p>
+	</div>
+
+	<div class="form-group">
+	<label for="passengers">Passengers</label>
+	<select name="passengers" ng-model="searchQuery.passengers" class="form-control" >
+		<option>1</option>
+		<option>2</option>
+		<option>3</option>
+		<option>4</option>
+		<option>5</option>
+	</select>
+	</div>
+
+	<button class="btn btn-primary btn-block" ng-click="showResults()">Search</button>
+</form>

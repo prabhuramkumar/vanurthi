@@ -1,0 +1,80 @@
+[
+    {
+        "name": "Indigo",
+        "price": 1000,
+        "flightcode": "IN-201",
+        "sourcecode": "BAN",
+        "departure": "2015-06-03T13:03:56.325Z",
+        "departureTime": "09:00",
+        "destinationcode": "CHE",
+        "arrival": "2015-06-03T17:03:56.325Z",
+        "arrivalTime": "13:00"
+    },
+     {
+        "name": "Indigo",
+        "price": 1500,
+        "flightcode": "IN-202",
+        "sourcecode": "CHE",
+        "departure": "2015-06-07T12:03:56.325Z",
+        "departureTime": "09:00",
+        "destinationcode": "BAN",
+        "arrival": "2015-06-07T14:03:56.325Z",
+        "arrivalTime": "13:00"
+    },
+    {
+        "name": "Kingfisher",
+        "price": 900,
+        "flightcode": "KF-201",
+        "sourcecode": "BAN",
+        "departure": "2015-06-03T13:03:56.325Z",
+        "departureTime": "09:00",
+        "destinationcode": "CHE",
+        "arrival": "2015-06-03T17:03:56.325Z",
+        "arrivalTime": "13:00"
+    },
+     {
+        "name": "Kingfisher",
+        "price": 1000,
+        "flightcode": "KF-202",
+        "sourcecode": "CHE",
+        "departure": "2015-06-07T12:03:56.325Z",
+        "departureTime": "09:00",
+        "destinationcode": "BAN",
+        "arrival": "2015-06-07T14:03:56.325Z",
+        "arrivalTime": "13:00"
+    },
+    {
+        "name": "Tiger",
+        "price": 1000,
+        "flightcode": "TI-202",
+        "sourcecode": "CHE",
+        "departure": "2015-06-04T10:03:56.325Z",
+        "departureTime": "10:00",
+        "destinationcode": "BAN",
+        "arrival": "2015-06-04T13:03:56.325Z",
+        "arrivalTime": "14:00"
+    },
+    {
+        "name": "Kingfisher",
+        "price": 2000,
+        "flightcode": "KA-201",
+        "sourcecode": "BAN",
+        "departure": "2015-07-22T13:03:56.325Z",
+        "departureTime": "09:00",
+        "destinationcode": "CHE",
+        "arrival": "2015-07-22T13:03:56.325Z",
+        "arrivalTime": "13:00"
+       
+    },
+    {   "name": "Jet Airways",
+        "price": 2000,
+        "flightcode": "JT-202",
+        "sourcecode": "CHE",
+        "departure": "2015-07-23T13:03:56.325Z",
+        "departureTime": "10:00",
+        "destinationcode": "BAN",
+        "arrival": "2015-07-23T13:03:56.325Z",
+        "arrivalTime": "14:00"
+    }
+    
+]

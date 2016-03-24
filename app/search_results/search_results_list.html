@@ -1,0 +1,29 @@
+<ul class="flight-list">
+	<li ng-repeat="flight in onwardFlightResult track by $index" class="panel panel-default">
+		<div class="schedule-container" >	
+			<ul class="onward">
+				<!-- <li class="flight-code">{{flight.flightcode}}</li> -->
+				<!-- <li class="flight-path text-muted">{{flight.sourcecode}} &gt; {{flight.destinationcode}}</li>
+-->
+			<!-- 	<li class="flight-depart">Departure Date: {{flight.departure | date: 'dd-MMM-yyyy'}} </li> -->
+				<li><input type="radio" name="flightOnward"/></li>
+				<li>{{flight.name}}</br>{{flight.flightcode}}</li>
+				<li class="flight-depart">{{flight.departureTime | date: 'hh:mm'}}
+				
+				</li>
+
+				<!-- <li class="flight-arrive">Arrival Date: {{flight.arrival | date: 'dd-MMM-yyyy'}} </li> -->
+
+				<li class="flight-arrive">{{flight.arrivalTime | date: 'hh:mm'}} </li>
+
+				<li class="flight-duration" ng-hide="returnAvailable">2 hours</li>
+
+				<li class="flight-price label label-default">Rs. {{flight.price}}</li>
+				<li ng-hide="returnAvailable">
+					<button ng-if="!returnAvailable" class="btn btn-primary btn-block">Book</button>
+				</li>
+			</ul>
+
+		</div>
+	</li>
+</ul>
