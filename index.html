@@ -25,7 +25,6 @@
    <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
   
-  <script src="app/search/search_controller.js"></script>
   <script src="app/search_results/search_results_controller.js"></script>
   <script src="app/search_widget/search_widget_controller.js"></script>
   <script src="app/search_widget/search_widget_directive.js"></script>
@@ -46,7 +45,7 @@
       <h1>Flight Search Engine</h1>
       <p> Welcome {{user.google.displayName}}!!</p>
     </div>
-    <div class="main-container" ng-controller="SearchCtrl">
+    <div class="main-container" ng-controller="SearchResultsCtrl">
 
       <div class="sidebar">
           <search-widget on-search="searchFlights(searchQuery)"></search-widget>

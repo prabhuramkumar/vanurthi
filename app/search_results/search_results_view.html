@@ -2,59 +2,11 @@
 <div class="flight-results-panel">
 	<div class="onward-flight-results" ng-if="onwardFlightResult.length">
 		<h4 class="alert alert-info">Onward Fligths</h4>
-		<ul class="header-row">
-			<li>Select</li>
-			<li>Name</li>
-			<li class="flight-depart">Depart</li>
-			<li class="flight-arrive">Arrive</li>
-			<li class="flight-duration" ng-hide="returnAvailable">Duration</li>
-			<li class="flight-price">Price</li>
-			<li class="flight-book" ng-hide="returnAvailable">Book</li>
-		</ul>
-		<flight-list></flight-list>
+		<flight-list context="onward" flight-list="onwardFlightResult"></flight-list>
 	</div>
 	<div class="return-flight-results" ng-if="returnFlightResult.length">
 		<h4 class="alert alert-info">Return Fligths</h4>
-		<ul class="header-row">
-			<li>Select</li>
-			<li>Name</li>
-			<li>Depart</li>
-			<li>Arrive</li>
-			<li ng-hide="returnAvailable">Duration</li>
-			<li>Price</li>
-			<li ng-hide="returnAvailable">Book</li>
-		</ul>
-		<ul class="flight-list">
-
-			<li ng-repeat="flight in returnFlightResult track by $index" class="panel panel-default">
-				<div class="schedule-container">
-						
-					<ul class="return">
-						<!-- <li class="flight-code">{{flight.flightcode}}</li> -->
-						<!-- <li class="flight-path text-muted">{{flight.sourcecode}} &gt; {{flight.destinationcode}}</li> -->
-<!-- 
-						<li class="flight-depart">Departure Date: {{flight.departure | date: 'dd-MMM-yyyy'}} </li> -->
-						<li><input type="radio" name="flightReturn"/></li>
-						<li>{{flight.name}}</br>
-						{{flight.flightcode}}</li>
-						<li class="flight-depart"> {{flight.departureTime | date: 'hh:mm'}} 
-						</li>
-<!-- 
-						<li class="flight-arrive">Arrival Date: {{flight.arrival | date: 'dd-MMM-yyyy'}} </li> -->
-
-						<li class="flight-arrive">{{flight.arrivalTime | date: 'hh:mm'}} </li>
-
-						<li class="flight-arrive" ng-hide="returnAvailable">2 hours</li>
-
-						<li class="flight-price label label-default">Rs. {{flight.price}}</li>
-						<li ng-hide="returnAvailable">
-							<button ng-if="!returnAvailable" class="btn btn-primary btn-block">Book</button>
-						</li>
-					</ul>
-
-				</div>
-			</li>
-		</ul>
+		<flight-list context="return" flight-list="returnFlightResult"></flight-list>
 	</div>
 </div>
 

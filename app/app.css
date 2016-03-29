@@ -2,10 +2,12 @@
 *{
   box-sizing: border-box;
 }
+
 ul{
   margin: 0;
   padding:0;
 }
+
 ul li{
   list-style: none;
 }
@@ -46,14 +48,17 @@ ul li{
 .flight-list > li{
   border-bottom: 1px solid #ccc;
 }
+
 .schedule-container{
   display:  flex;
   flex-direction: column;
   font-size: 18px;
 }
+
 .schedule-container .flight-code{
   font-size: 12px;
 }
+
 .schedule-container .flight-book a{
   height: 100px;
 }
@@ -69,6 +74,7 @@ ul li{
   justify-content: center;
   font-size: 12px;
   margin: 10px;
+  line-height: 12px;
 }
 
 .onward, .return{

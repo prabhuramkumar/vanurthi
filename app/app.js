@@ -3,7 +3,6 @@
 // Declare app level module which depends on views, and components
 var flightSearch = angular.module('flightSearch', [
   'ngRoute',
-  'search',
   'searchResults',
   'searchWidget',
   'flightSearch.version',
@@ -36,8 +35,7 @@ flightSearch.controller('AppCtrl', function($scope){
 
 flightSearch.config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/', {
-    templateUrl: 'app/search_results/search_results_view.html',
-    controller: 'flightListCtrl'
+    templateUrl: 'app/search_results/search_results_view.html'
   });
 
   $routeProvider.otherwise({redirectTo: '/'});

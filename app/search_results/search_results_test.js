@@ -11,7 +11,7 @@ describe('searchResults controllers', function() {
 	    });
   	});
 
-	describe('flightListCtrl', function(){
+	describe('SearchResultsCtrl', function(){
 	  	var ctrl, scope, $httpBackend;
 
 	  	beforeEach(inject(function(_$httpBackend_, $rootScope, $controller){
@@ -20,7 +20,7 @@ describe('searchResults controllers', function() {
 	  		respond([{'name':'Flight1'},{'name':'Flight2'}]);
 
 	  		scope = $rootScope;
-	  		ctrl = $controller('flightListCtrl', {$scope: scope});
+	  		ctrl = $controller('SearchResultsCtrl', {$scope: scope});
 	  		
 	  	}));
 

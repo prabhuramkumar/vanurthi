@@ -6,10 +6,6 @@ angular.module('searchWidget', [])
 		$scope.searchQuery = {};
 		
 		$scope.showResults = function(){
-			$scope.searchQuery.returnDate = $scope.searchQuery.returnDate;
-			$scope.searchQuery.departDate = $scope.searchQuery.departDate;
-			
-			// console.log($scope.searchQuery);
 			$scope.onSearch ({
 				searchQuery: $scope.searchQuery
 			});
