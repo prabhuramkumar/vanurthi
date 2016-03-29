@@ -1,44 +1,46 @@
 'use strict';
 
 angular.module('searchWidget', [])
-.controller('SearchWidgetCtrl', ['$scope', '$http',
-	function ($scope, $http) {
-		$scope.searchQuery = {};
-		
-		$scope.showResults = function(){
-			$scope.onSearch ({
-				searchQuery: $scope.searchQuery
-			});
-		};
+	.controller('SearchWidgetCtrl', ['$scope', '$http',
+		function ($scope, $http) {
+			$scope.searchQuery = {};
 
-	  $scope.toggleMin = function() {
-	    $scope.minDate = $scope.minDate ? null : new Date();
-	  };
+			$scope.showResults = function(){
+				$scope.onSearch ({
+					searchQuery: $scope.searchQuery
+				});
+			};
 
-	  $scope.toggleMin();
+			$scope.toggleMin = function() {
+				$scope.minDate = $scope.minDate ? null : new Date();
+			};
 
-	  $scope.open = function($event, context) {
-	    $event.preventDefault();
-	    $event.stopPropagation();
+			$scope.toggleMin();
 
-	    if(context == 'depart')
-	    {
-	    	$scope.openedDepart = true;
-	    	$scope.openedReturn = false;
-	    }
-	    if(context == 'return')
-	    {
-	    	$scope.openedReturn = true;
-	    	$scope.openedDepart = false;
-	    }
-	  };
+			$scope.calendarState  = {
+				departureOpened: false,
+				returnOpened: false
+			}
 
-	  $scope.dateOptions = {
-	    formatYear: 'yy',
-	    startingDay: 1
-	  };
+			$scope.calendarOpen = function($event, context) {
+				$event.preventDefault();
+				$event.stopPropagation();
+				var calendarState = $scope.calendarState;
 
-	  $scope.formats = ['dd-MM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
-  	  $scope.format = $scope.formats[0];
+				for (var prop in calendarState) {
+					calendarState[prop] = false;
+				}
 
-}]);
+				calendarState[context] = true;
+
+			};
+
+			$scope.dateOptions = {
+				formatYear: 'yy',
+				startingDay: 1
+			};
+
+			$scope.formats = ['dd-MM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+			$scope.format = $scope.formats[0];
+
+		}]);

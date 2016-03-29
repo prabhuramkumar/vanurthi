@@ -14,10 +14,10 @@
 	<div class="form-group">
 	<label for="departDate">Departure</label>
 		<p class="input-group">
-              <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="searchQuery.departDate" is-open="openedDepart" min-date="minDate" max-date="'2017-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+              <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="searchQuery.departDate" is-open="calendarState.departureOpened" min-date="minDate" max-date="'2017-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
 
               <span class="input-group-btn">
-                <button type="button" class="btn btn-default" ng-click="open($event, 'depart')"><i class="glyphicon glyphicon-calendar"></i></button>
+                <button type="button" class="btn btn-default" ng-click="calendarOpen($event, 'departureOpened')"><i class="glyphicon glyphicon-calendar"></i></button>
               </span>
         </p>
 	</div>
@@ -25,10 +25,10 @@
 	<div class="form-group">
 		<label><input type="checkbox" ng-model="searchQuery.returnActive" />Return</label>
 		<p class="input-group" ng-hide="!searchQuery.returnActive">
-	          <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="searchQuery.returnDate" is-open="openedReturn" min-date="minDate" max-date="'2017-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+	          <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="searchQuery.returnDate" is-open=" calendarState.returnOpened" min-date="minDate" max-date="'2017-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
 
 	          <span class="input-group-btn">
-	            <button type="button" class="btn btn-default" ng-click="open($event, 'return')"><i class="glyphicon glyphicon-calendar"></i></button>
+	            <button type="button" class="btn btn-default" ng-click="calendarOpen($event, 'returnOpened')"><i class="glyphicon glyphicon-calendar"></i></button>
 	          </span>
 	    </p>
 	</div>
