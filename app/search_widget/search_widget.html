@@ -3,39 +3,39 @@
 
 	<div class="form-group">
 		<label for="from">From</label>
-		<input type="text" name="from" ng-model="searchQuery.from" class="form-control" ng-required="true"/>
+		<input type="text" name="from" ng-model="searchWidget.searchQuery.from" class="form-control" ng-required="true"/>
 	</div>
 
 	<div class="form-group">
 		<label for="to">To</label>
-		<input type="text" name="to" ng-model="searchQuery.to" class="form-control" ng-required="true"/>
+		<input type="text" name="to" ng-model="searchWidget.searchQuery.to" class="form-control" ng-required="true"/>
 	</div>
 
 	<div class="form-group">
 	<label for="departDate">Departure</label>
 		<p class="input-group">
-              <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="searchQuery.departDate" is-open="calendarState.departureOpened" min-date="minDate" max-date="'2017-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+              <input type="text" class="form-control" datepicker-popup="{{searchWidget.format}}" ng-model="searchWidget.searchQuery.departDate" is-open="searchWidget.calendarState.departureOpened" min-date="searchWidget.minDate" max-date="'2017-06-22'" datepicker-options="searchWidget.dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
 
               <span class="input-group-btn">
-                <button type="button" class="btn btn-default" ng-click="calendarOpen($event, 'departureOpened')"><i class="glyphicon glyphicon-calendar"></i></button>
+                <button type="button" class="btn btn-default" ng-click="searchWidget.calendarOpen($event, 'departureOpened')"><i class="glyphicon glyphicon-calendar"></i></button>
               </span>
         </p>
 	</div>
 
 	<div class="form-group">
-		<label><input type="checkbox" ng-model="searchQuery.returnActive" />Return</label>
-		<p class="input-group" ng-hide="!searchQuery.returnActive">
-	          <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="searchQuery.returnDate" is-open=" calendarState.returnOpened" min-date="minDate" max-date="'2017-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+		<label><input type="checkbox" ng-model="searchWidget.searchQuery.returnActive" />Return</label>
+		<p class="input-group" ng-hide="!searchWidget.searchQuery.returnActive">
+	          <input type="text" class="form-control" datepicker-popup="{{searchWidget.format}}" ng-model="searchWidget.searchQuery.returnDate" is-open="searchWidget.calendarState.returnOpened" min-date="searchWidget.minDate" max-date="'2017-06-22'" datepicker-options="searchWidget.dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
 
 	          <span class="input-group-btn">
-	            <button type="button" class="btn btn-default" ng-click="calendarOpen($event, 'returnOpened')"><i class="glyphicon glyphicon-calendar"></i></button>
+	            <button type="button" class="btn btn-default" ng-click="searchWidget.calendarOpen($event, 'returnOpened')"><i class="glyphicon glyphicon-calendar"></i></button>
 	          </span>
 	    </p>
 	</div>
 
 	<div class="form-group">
 		<label for="passengers">Passengers</label>
-		<select name="passengers" ng-model="searchQuery.passengers" class="form-control" >
+		<select name="passengers" ng-model="searchWidget.searchQuery.passengers" class="form-control" >
 			<option>1</option>
 			<option>2</option>
 			<option>3</option>
@@ -44,5 +44,5 @@
 		</select>
 	</div>
 
-	<button class="btn btn-primary btn-block" ng-click="showResults()">Search</button>
+	<button class="btn btn-primary btn-block" ng-click="searchWidget.showResults()">Search</button>
 </form>

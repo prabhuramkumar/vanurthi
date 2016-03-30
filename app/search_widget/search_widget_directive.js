@@ -6,6 +6,7 @@ angular.module('searchWidget')
 				onSearch:"&"
 			},
 			templateUrl: 'app/search_widget/search_widget.html',
-			controller: 'SearchWidgetCtrl'
+			controller: 'SearchWidgetCtrl',
+			controllerAs: 'searchWidget'
 		}	
 	});

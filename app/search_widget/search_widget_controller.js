@@ -3,29 +3,30 @@
 angular.module('searchWidget', [])
 	.controller('SearchWidgetCtrl', ['$scope', '$http',
 		function ($scope, $http) {
-			$scope.searchQuery = {};
+			var controller = this;
+			controller.searchQuery = {};
 
-			$scope.showResults = function(){
+			controller.showResults = function(){
 				$scope.onSearch ({
-					searchQuery: $scope.searchQuery
+					searchQuery: controller.searchQuery
 				});
 			};
 
-			$scope.toggleMin = function() {
-				$scope.minDate = $scope.minDate ? null : new Date();
+			controller.toggleMin = function() {
+				controller.minDate = controller.minDate ? null : new Date();
 			};
 
-			$scope.toggleMin();
+			controller.toggleMin();
 
-			$scope.calendarState  = {
+			controller.calendarState  = {
 				departureOpened: false,
 				returnOpened: false
 			}
 
-			$scope.calendarOpen = function($event, context) {
+			controller.calendarOpen = function($event, context) {
 				$event.preventDefault();
 				$event.stopPropagation();
-				var calendarState = $scope.calendarState;
+				var calendarState = controller.calendarState;
 
 				for (var prop in calendarState) {
 					calendarState[prop] = false;
@@ -35,12 +36,12 @@ angular.module('searchWidget', [])
 
 			};
 
-			$scope.dateOptions = {
+			controller.dateOptions = {
 				formatYear: 'yy',
 				startingDay: 1
 			};
 
-			$scope.formats = ['dd-MM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
-			$scope.format = $scope.formats[0];
+			controller.formats = ['dd-MM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+			controller.format = controller.formats[0];
 
 		}]);

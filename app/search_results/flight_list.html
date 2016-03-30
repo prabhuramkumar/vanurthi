@@ -3,9 +3,9 @@
 	<li>Name</li>
 	<li class="flight-depart">Depart</li>
 	<li class="flight-arrive">Arrive</li>
-	<li class="flight-duration" ng-hide="returnAvailable">Duration</li>
+	<li class="flight-duration" ng-hide="searchResults.returnAvailable">Duration</li>
 	<li class="flight-price">Price</li>
-	<li class="flight-book" ng-hide="returnAvailable">Book</li>
+	<li class="flight-book" ng-hide="searchResults.returnAvailable">Book</li>
 </ul>
 <ul class="flight-list">
 	<li ng-repeat="flight in flightList track by $index" class="panel panel-default">
@@ -21,8 +21,8 @@
 				<li class="flight-duration" ng-hide="returnAvailable">2 hours</li>
 
 				<li class="flight-price label label-default">Rs. {{flight.price}}</li>
-				<li ng-hide="returnAvailable">
-					<button ng-if="!returnAvailable" class="btn btn-primary btn-block">Book</button>
+				<li ng-hide="searchResults.returnAvailable">
+					<button ng-if="!searchResults.returnAvailable" class="btn btn-primary btn-block">Book</button>
 				</li>
 			</ul>
 
