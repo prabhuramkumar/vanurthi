@@ -9,12 +9,10 @@
   <title>My AngularJS App</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-
-  <!-- <link rel="stylesheet" href="../bower_components/angular-bootstrap/ui-bootstrap-csp.css"> -->
-
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="app/app.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="bower_components/moment/moment.js"></script>
   <script src="bower_components/lodash/lodash.js"></script>
 
@@ -41,23 +39,21 @@
   <![endif]-->
 
   <div class="wrapper" ng-if="user">
-    <div class="header">
+    <header class="header">
       <h1>Flight Search Engine</h1>
       <p> Welcome {{user.google.displayName}}!!</p>
-    </div>
+    </header>
+
     <div class="main-container" ng-controller="SearchResultsCtrl">
-
-      <div class="sidebar">
+      <section class="sidebar">
           <search-widget on-search="searchFlights(searchQuery)"></search-widget>
-      </div>
-
-  
-      <div class="flight-results" ng-view></div>
+      </section>
+      <section class="flight-results" ng-view></section>
     </div>
 
-    <div class="footer">
+    <footer class="footer">
       <p>Angular seed app: v<span app-version></span></p>
-    </div>
+    </footer>
   
   </div>
   <!-- In production use:
