@@ -7,10 +7,13 @@ module.exports = function(config){
       'bower_components/angular/angular.js',
       'bower_components/angular-route/angular-route.js',
       'bower_components/angular-mocks/angular-mocks.js',
+      'app/search_results/search_results_service.js',
+      'app/search_results/search_results_controller.js',
       'app/app.js',
-      'app/components/**/*.js',
-      'app/search_results/**/*.js'
+      'app/search_results/spec/search_results_test.js'
     ],
+
+    exclude: ["bower_components/**/*Spec.js", "bower_components/q/spec/*spec.js"],
 
     autoWatch : true,
 
