@@ -3,28 +3,28 @@
 angular.module('searchResults')
 .controller('SearchResultsCtrl', ['$scope', 'SearchService',
 	function($scope, SearchService) {
+		$scope.flightList = false;
+
 		$scope.searchFlights = function (searchQuery) {
-			$scope.flightList = null;
+			$scope.flightList = true;
 			$scope.returnAvailable = false;
 			$scope.onwardFlights = [];
 			$scope.returnFlights = [];
 
-			$scope.onwardFlights =  SearchService.getOnWardFlightResults(searchQuery.from, searchQuery.to, searchQuery.departDate);
+			SearchService.getOnWardFlightResults(searchQuery.from, searchQuery.to, searchQuery.departDate).then(function(data){
+				$scope.onwardFlights = data;
+			});
 
 			if(searchQuery.returnActive) {
-				$scope.returnFlights = SearchService.getReturnFlightResults(searchQuery.from, searchQuery.to, searchQuery.returnDate);
+				SearchService.getReturnFlightResults(searchQuery.from, searchQuery.to, searchQuery.returnDate).then(function(data){
+					$scope.returnFlights = data;
+
+				});
 			}
 
 			if($scope.returnFlights.length > 0)	{
 				$scope.returnAvailable = true;
 			}
-
-			if($scope.onwardFlights.length != 0 ||  $scope.returnFlights.length != 0){
-				$scope.flightList = true;
-			}else {
-				$scope.flightList = false;
-			}
-
 		};
 
 	}]);

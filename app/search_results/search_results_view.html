@@ -10,10 +10,10 @@
 	</div>
 </div>
 
-<p ng-if="flightList == null"  class="alert alert-info">
+<p ng-if="!flightList"  class="alert alert-info">
 	Choose your itineraries on the left to search flights.
 </p>
 
-<p ng-if="flightList != null && !flightList" class="alert alert-danger">
+<p ng-if="onwardFlights.length == 0 && returnFlights.length == 0" class="alert alert-danger">
 	No Flights Found
 </p>

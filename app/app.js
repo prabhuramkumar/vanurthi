@@ -35,9 +35,7 @@ flightSearch.controller('AppCtrl', function($scope){
 
 flightSearch.config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/', {
-    templateUrl: 'app/search_results/search_results_view.html',
-    controller: 'SearchResultsCtrl',
-    controllerAs: 'searchResults'
+    templateUrl: 'app/search_results/search_results_view.html'
   });
 
   $routeProvider.otherwise({redirectTo: '/'});
