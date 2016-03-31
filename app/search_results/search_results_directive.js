@@ -1,12 +1,8 @@
 'use strict';
 
-angular.module('searchResults').directive('flightList', function(){
+angular.module('searchResults').directive('searchResults', function(){
 	return {
 		restrict: "E",
-		scope: {
-			context: "@",
-			flightList: "="
-		},
-		templateUrl: 'app/search_results/flight_list.html'
+		templateUrl: 'app/search_results/search_results.html'
 	}
 });

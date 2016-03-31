@@ -1,0 +1,19 @@
+<h3>Search Results</h3>
+<div class="flight-results-panel">
+	<div class="onward-flight-results" ng-if="results.onwardFlights.length">
+		<h4 class="alert alert-info">Onward Fligths</h4>
+		<flight-list context="onward" flight-list="results.onwardFlights"></flight-list>
+	</div>
+	<div class="return-flight-results" ng-if="results.returnFlights.length">
+		<h4 class="alert alert-info">Return Fligths</h4>
+		<flight-list context="return" flight-list="results.returnFlights"></flight-list>
+	</div>
+</div>
+
+<p ng-if="!results.flightList"  class="alert alert-info">
+	Choose your itineraries on the left to search flights.
+</p>
+
+<p ng-if="results.onwardFlights.length == 0 && results.returnFlights.length == 0" class="alert alert-danger">
+	No Flights Found
+</p>
