@@ -25,7 +25,7 @@ describe('searchResults controllers', function() {
 
 	beforeEach(inject(function ($controller, $rootScope) {
 		$scope = $rootScope.$new(); // create a new clean scope
-		$controller('SearchResultsCtrl as results ', {
+		$controller('SearchResultsCtrl as results', {
 			Service: Service,
 			$scope: $scope
 		});
