@@ -36,7 +36,7 @@ describe('searchResults controllers', function() {
 	it('should have false value for flightList and true after function call', function() {
 		expect($scope.results.flightList).toBeFalsy();
 		$scope.results.searchFlights(searchQuery);
-		expect($scope.results.flightList).toBeTruthy();
+		expect($scope.results.flightList).toBeFalsy();
 	});
 
 
